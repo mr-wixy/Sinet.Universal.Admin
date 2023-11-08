@@ -112,13 +112,13 @@ public class AdminHttpApiHostModule : AbpModule
             {
                 options.FileSets.ReplaceEmbeddedByPhysical<AdminDomainSharedModule>(
                     Path.Combine(hostingEnvironment.ContentRootPath,
-                        $"..{Path.DirectorySeparatorChar}Sinet.Universal.Admin.Domain.Shared"));
+                        $"..\\..\\common{Path.DirectorySeparatorChar}Sinet.Universal.Admin.Domain.Shared"));
                 options.FileSets.ReplaceEmbeddedByPhysical<AdminDomainModule>(
                     Path.Combine(hostingEnvironment.ContentRootPath,
                         $"..{Path.DirectorySeparatorChar}Sinet.Universal.Admin.Domain"));
                 options.FileSets.ReplaceEmbeddedByPhysical<AdminApplicationContractsModule>(
                     Path.Combine(hostingEnvironment.ContentRootPath,
-                        $"..{Path.DirectorySeparatorChar}Sinet.Universal.Admin.Application.Contracts"));
+                        $"..\\..\\common{Path.DirectorySeparatorChar}Sinet.Universal.Admin.Application.Contracts"));
                 options.FileSets.ReplaceEmbeddedByPhysical<AdminApplicationModule>(
                     Path.Combine(hostingEnvironment.ContentRootPath,
                         $"..{Path.DirectorySeparatorChar}Sinet.Universal.Admin.Application"));

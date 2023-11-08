@@ -41,6 +41,8 @@ using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
+using Sinet.Universal.Admin.RCL;
+using System.Reflection;
 
 namespace Sinet.Universal.Admin;
 
@@ -56,7 +58,8 @@ namespace Sinet.Universal.Admin;
     typeof(AbpAspNetCoreMvcUiBasicThemeModule),
     typeof(AbpIdentityBlazorServerModule),
     typeof(AbpTenantManagementBlazorServerModule),
-    typeof(AbpSettingManagementBlazorServerModule)
+    typeof(AbpSettingManagementBlazorServerModule),
+    typeof(AdminBlazorServerModule)
    )]
 public class AdminBlazorModule : AbpModule
 {
@@ -89,6 +92,18 @@ public class AdminBlazorModule : AbpModule
     {
         var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
+
+        context.Services.AddMasaBlazor(builder =>
+        {
+            builder.ConfigureTheme(theme =>
+            {
+                theme.Themes.Light.Primary = "#4318FF";
+                theme.Themes.Light.Accent = "#4318FF";
+            });
+        }).AddI18nForServer("wwwroot/i18n");
+
+        var basePath = Path.GetDirectoryName(Assembly.GetAssembly(typeof(AdminBlazorServerModule)).Location) ?? throw new Exception("Get the assembly root directory exception!");
+        context.Services.AddNav(Path.Combine(basePath, $"wwwroot/nav/nav.json"));
 
         ConfigureAuthentication(context);
         ConfigureUrls(configuration);

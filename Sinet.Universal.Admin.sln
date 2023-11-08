@@ -45,9 +45,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{15E62D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sinet.Universal.Admin.Server.Host", "src\server\Sinet.Universal.Admin.Server.Host\Sinet.Universal.Admin.Server.Host.csproj", "{CEBD131C-0B70-4BBF-99C5-47E2EB415554}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sinet.Universal.Admin.RCL", "src\common\Sinet.Universal.Admin.RCL\Sinet.Universal.Admin.RCL.csproj", "{9EC53C30-FD0C-4DA2-958F-A7F5E277CE7C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sinet.Universal.Admin.Web", "src\client\Sinet.Universal.Admin.Web\Sinet.Universal.Admin.Web.csproj", "{6C032DF5-C957-468F-A4C9-CA8167508DEF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sinet.Universal.Admin.RCL", "src\common\Sinet.Universal.Admin.RCL\Sinet.Universal.Admin.RCL.csproj", "{1292B265-A3F8-480A-B63E-BE7DA3F9C981}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,14 +119,14 @@ Global
 		{CEBD131C-0B70-4BBF-99C5-47E2EB415554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEBD131C-0B70-4BBF-99C5-47E2EB415554}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEBD131C-0B70-4BBF-99C5-47E2EB415554}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9EC53C30-FD0C-4DA2-958F-A7F5E277CE7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9EC53C30-FD0C-4DA2-958F-A7F5E277CE7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9EC53C30-FD0C-4DA2-958F-A7F5E277CE7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9EC53C30-FD0C-4DA2-958F-A7F5E277CE7C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6C032DF5-C957-468F-A4C9-CA8167508DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6C032DF5-C957-468F-A4C9-CA8167508DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C032DF5-C957-468F-A4C9-CA8167508DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C032DF5-C957-468F-A4C9-CA8167508DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1292B265-A3F8-480A-B63E-BE7DA3F9C981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1292B265-A3F8-480A-B63E-BE7DA3F9C981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1292B265-A3F8-480A-B63E-BE7DA3F9C981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1292B265-A3F8-480A-B63E-BE7DA3F9C981}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,8 +151,8 @@ Global
 		{CA3CC1A0-79B8-4B7B-8180-9A355B3856F7} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 		{15E62D85-34D1-44EE-9C43-AD3CC8D8558D} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 		{CEBD131C-0B70-4BBF-99C5-47E2EB415554} = {CA3CC1A0-79B8-4B7B-8180-9A355B3856F7}
-		{9EC53C30-FD0C-4DA2-958F-A7F5E277CE7C} = {3BF71760-5526-4089-8A43-ED8430847906}
 		{6C032DF5-C957-468F-A4C9-CA8167508DEF} = {15E62D85-34D1-44EE-9C43-AD3CC8D8558D}
+		{1292B265-A3F8-480A-B63E-BE7DA3F9C981} = {3BF71760-5526-4089-8A43-ED8430847906}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28315BFD-90E7-4E14-A2EA-F3D23AF4126F}

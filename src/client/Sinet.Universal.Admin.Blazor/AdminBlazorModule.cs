@@ -17,6 +17,10 @@ using Volo.Abp.UI.Navigation;
 using Volo.Abp.Identity.Blazor.WebAssembly;
 using Volo.Abp.SettingManagement.Blazor.WebAssembly;
 using Volo.Abp.TenantManagement.Blazor.WebAssembly;
+using System.Threading.Tasks;
+using System.Net.Http.Json;
+using System.IO;
+using System.Collections.Generic;
 
 namespace Sinet.Universal.Admin.Blazor;
 
@@ -30,10 +34,45 @@ namespace Sinet.Universal.Admin.Blazor;
 )]
 public class AdminBlazorModule : AbpModule
 {
-    public override void ConfigureServices(ServiceConfigurationContext context)
+    //public override void ConfigureServices(ServiceConfigurationContext context)
+    //{
+    //    var environment = context.Services.GetSingletonInstance<IWebAssemblyHostEnvironment>();
+    //    var builder = context.Services.GetSingletonInstance<WebAssemblyHostBuilder>();
+
+        
+
+    //    ConfigureAuthentication(builder);
+    //    ConfigureHttpClient(context, environment);
+    //    ConfigureBlazorise(context);
+    //    ConfigureRouter(context);
+    //    ConfigureUI(builder);
+    //    ConfigureMenu(context);
+    //    ConfigureAutoMapper(context);
+    //}
+
+    public override async Task ConfigureServicesAsync(ServiceConfigurationContext context)
     {
         var environment = context.Services.GetSingletonInstance<IWebAssemblyHostEnvironment>();
         var builder = context.Services.GetSingletonInstance<WebAssemblyHostBuilder>();
+
+        //builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+        //using var httpclient = new HttpClient();
+        //var navList = await httpclient.GetFromJsonAsync<List<NavModel>>(Path.Combine(builder.HostEnvironment.BaseAddress, $"nav/nav.json")) ?? throw new Exception("please configure the Navigation!");
+        //builder.Services.AddNav(navList); 
+        
+        //await builder.Services
+        //     .AddMasaBlazor(builder =>
+        //     {
+        //         builder.ConfigureTheme(theme =>
+        //         {
+        //             theme.Themes.Light.Primary = "#4318FF";
+        //             theme.Themes.Light.Accent = "#4318FF";
+        //         });
+        //     })
+        //     .AddI18nForWasmAsync(Path.Combine(builder.HostEnvironment.BaseAddress, "i18n"));
+
+
 
         ConfigureAuthentication(builder);
         ConfigureHttpClient(context, environment);
@@ -42,6 +81,8 @@ public class AdminBlazorModule : AbpModule
         ConfigureUI(builder);
         ConfigureMenu(context);
         ConfigureAutoMapper(context);
+
+        await base.ConfigureServicesAsync(context);
     }
 
     private void ConfigureRouter(ServiceConfigurationContext context)

@@ -1,0 +1,15 @@
+﻿@page "/"
+@using Sinet.Universal.Admin.RCL.Data.Base
+@using Sinet.Universal.Admin.RCL.Shared
+@layout EmptyLayout
+@inject NavigationManager Nav
+
+@code {
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if(firstRender)
+        {
+            Nav.NavigateTo(GlobalVariables.DefaultLoginRoute, true);
+        }
+    }
+}

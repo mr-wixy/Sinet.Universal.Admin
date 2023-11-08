@@ -7,21 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Masa.Blazor" Version="1.0.2" />
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Components.Server.BasicTheme" Version="7.4.1" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="7.4.1" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="7.4.1" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="7.4.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\i18n\config\languageConfig.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <ProjectReference Include="..\..\common\Sinet.Universal.Admin.HttpApi.Client\Sinet.Universal.Admin.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\common\Sinet.Universal.Admin.RCL\Sinet.Universal.Admin.RCL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\i18n\en-US.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\i18n\zh-CN.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\nav\nav.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Update="appsettings.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
   </ItemGroup>
 

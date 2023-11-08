@@ -1,6 +1,7 @@
 ﻿@page "/"
 @namespace Sinet.Universal.Admin.Server.Host.Pages
 @using System.Globalization
+@using Microsoft.AspNetCore.Components.Web
 @using Volo.Abp.AspNetCore.Components.Web.BasicTheme.Themes.Basic
 @using Volo.Abp.AspNetCore.Components.Server.BasicTheme.Bundling
 @using Volo.Abp.Localization
@@ -16,12 +17,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sinet.Universal.Admin.Server.Host</title>
     <base href="~/" />
-    
-    <abp-style-bundle name="@BlazorBasicThemeBundles.Styles.Global" />
+    @* 
+    <abp-style-bundle name="@BlazorBasicThemeBundles.Styles.Global" /> *@
+
+    <link rel="icon" type="image/png" href="https://cdn.masastack.com/stack/images/logo/MASAStack/logo16_16.png" />
+    <link href="_content/Masa.Blazor/css/masa-blazor.min.css" rel="stylesheet">
+    <link href="css/masa-blazor-pro.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="Sinet.Universal.Admin.Server.Host.styles.css" rel="stylesheet" />
+    <link href="css/materialdesign/v7.1.96/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="css/material/icons.css" rel="stylesheet">
+    <link href="css/fontawesome/v6.4.0/css/all.min.css" rel="stylesheet">
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body class="abp-application-layout bg-light @rtl">
 
-    <component type="typeof(App)" render-mode="Server" />
+    <component type="typeof(Sinet.Universal.Admin.RCL.App)" render-mode="Server" />
 
     <div id="blazor-error-ui">
         <environment include="Staging,Production">
@@ -34,6 +45,9 @@
         <a class="dismiss">🗙</a>
     </div>
 
-    <abp-script-bundle name="@BlazorBasicThemeBundles.Scripts.Global" />
+    @* <abp-script-bundle name="@BlazorBasicThemeBundles.Scripts.Global" /> *@
+    <script src="_framework/blazor.server.js"></script>
+    <script src="_content/BlazorComponent/js/blazor-component.js"></script>
+    <script src="js/echarts/5.1.1/echarts.min.js"></script>
 </body>
 </html>
