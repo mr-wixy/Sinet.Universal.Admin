@@ -214,9 +214,11 @@
     </MCol>
 </MRow>
 
-<Sinet.Universal.Admin.Web.Pages.App.Invoice.Components.InvoiceList />
+<Sinet.Universal.Admin.RCL.Pages.App.Invoice.Components.InvoiceList />
 
 @code {
+
+
 
     private List<DataTableHeader<PermissionDto>> _headers = new List<DataTableHeader<PermissionDto>>
     {
@@ -250,6 +252,14 @@
         base.OnInitialized();
 
         _userData = UserService.GetList().FirstOrDefault(u => u.Id == Id);
+
+        if (CurrentUser != null && _userData != null)
+        {
+            _userData.UserName = CurrentUser.Name;
+            _userData.Email = CurrentUser.Email;
+            _userData.Mobile = CurrentUser.PhoneNumber;
+            _userData.Role = CurrentUser.Roles.First();
+        }
 
         UpdateTabTitle();
     }

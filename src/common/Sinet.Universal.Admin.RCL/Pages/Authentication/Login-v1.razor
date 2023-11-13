@@ -6,7 +6,7 @@
 @inject NavigationManager Nav
 
 <div class="d-flex align-center" style="height:calc(100% - 96px)">
-    <Sinet.Universal.Admin.RCL.Pages.Authentication.Components.Login OnLogin="LoginTo" />
+    <Sinet.Universal.Admin.RCL.Pages.Authentication.Components.Login @bind-Name="@UserName" @bind-Pass="@Password" OnLogin="LoginTo" />
 </div>
 
 <MFooter Padless Height=96 Style="background:transparent;">
@@ -14,10 +14,3 @@
         <a href="https://beian.miit.gov.cn/" target="_blank" class="neutral-lighten-3--text" style="text-decoration:none;font-size:14px;">浙ICP备2021013592号-1</a>
     </MRow>
 </MFooter>
-
-@code{
-    void LoginTo()
-    {
-        Nav.NavigateTo(GlobalVariables.DefaultRoute, true);
-    }
-}

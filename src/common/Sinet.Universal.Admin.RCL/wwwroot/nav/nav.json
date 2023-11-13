@@ -179,7 +179,6 @@
     "Children": [
       {
         "Id": 28,
-        "Hide": true,
         "Title": "Account Settings",
         "Icon": "mdi-circle",
         "Href": "pages/others/account-settings"

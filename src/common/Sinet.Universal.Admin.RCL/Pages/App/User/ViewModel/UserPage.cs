@@ -59,6 +59,8 @@ public class UserPage
 
     public List<UserDto> GetPageDatas()
     {
+
+
         return GetFilterDatas().Skip((PageIndex - 1) * PageSize).Take(PageSize).ToList();
     }
 }

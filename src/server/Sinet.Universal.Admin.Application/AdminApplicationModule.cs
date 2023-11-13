@@ -1,7 +1,10 @@
-﻿using Volo.Abp.Account;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
+using Volo.Abp.Account;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
+using Volo.Abp.Identity.AspNetCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
@@ -21,6 +24,17 @@ namespace Sinet.Universal.Admin;
     )]
 public class AdminApplicationModule : AbpModule
 {
+
+    //public override void PreConfigureServices(ServiceConfigurationContext context)
+    //{
+    //    PreConfigure<IdentityBuilder>(identityBuilder =>
+    //    {
+    //        identityBuilder.AddSignInManager<AbpSignInManager>()
+    //            .AddUserValidator<AbpIdentityUserValidator>(); ;
+    //    });
+    //    base.PreConfigureServices(context);
+    //}
+
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         Configure<AbpAutoMapperOptions>(options =>

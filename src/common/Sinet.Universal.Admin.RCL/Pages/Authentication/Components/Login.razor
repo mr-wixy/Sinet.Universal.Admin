@@ -8,14 +8,14 @@
         <h5 class="mt-2 mb-12">Welcome to Sinet.Universal.Admin! 👋</h5>
 
         <MTextField TValue="string"
-                    Label="Email"
+                    Label="Email" OnInput="NameChanged"
                     Placeholder="john@example.com"
-                    Outlined
+                        Outlined @bind-Value="Name"
                     HideDetails="@("auto")">
         </MTextField>
         <MTextField TValue="string"
-                    Class="mt-10"
-                    Label="Password"
+                     Class="mt-10" OnInput="PassChanged"
+                     Label="Password" @bind-Value="Pass"
                     Type="@(_show ? "text" : "password")"
                     Placeholder="john@example.com"
                     AppendIcon="@(_show ? "mdi-eye" : "mdi-eye-off")"

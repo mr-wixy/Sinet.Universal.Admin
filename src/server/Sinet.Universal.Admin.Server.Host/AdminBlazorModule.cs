@@ -85,6 +85,7 @@ public class AdminBlazorModule : AbpModule
                 options.UseLocalServer();
                 options.UseAspNetCore();
             });
+            builder.AddServer(options => { options.UseAspNetCore().DisableTransportSecurityRequirement(); });
         });
     }
 

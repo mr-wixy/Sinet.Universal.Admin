@@ -21,6 +21,18 @@ public partial class Login
     public StringNumber? Elevation { get; set; }
 
     [Parameter]
+    public string? Name { get; set; }
+
+    [Parameter]
+    public EventCallback<string> NameChanged { get; set; }
+
+    [Parameter]
+    public string? Pass { get; set; }
+
+    [Parameter]
+    public EventCallback<string> PassChanged { get; set; }
+
+    [Parameter]
     public string CreateAccountRoute { get; set; } = $"pages/authentication/register-v1";
 
     [Parameter]
