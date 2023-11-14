@@ -54,6 +54,7 @@ public class AdminHttpApiHostModule : AbpModule
                 options.UseLocalServer();
                 options.UseAspNetCore();
             });
+            builder.AddServer(options => { options.UseAspNetCore().DisableTransportSecurityRequirement(); });
         });
     }
 

@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "https://localhost:44333",
+      "applicationUrl": "http://localhost:44333",
       "sslPort": 44333
     }
   },
@@ -18,7 +18,7 @@
     "Sinet.Universal.Admin.HttpApi.Host": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:44333",
+      "applicationUrl": "http://localhost:44333",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

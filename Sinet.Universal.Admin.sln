@@ -49,6 +49,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sinet.Universal.Admin.Web",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sinet.Universal.Admin.RCL", "src\common\Sinet.Universal.Admin.RCL\Sinet.Universal.Admin.RCL.csproj", "{1292B265-A3F8-480A-B63E-BE7DA3F9C981}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sinet.Universal.Admin.Client", "src\client\Sinet.Universal.Admin.Client\Sinet.Universal.Admin.Client.csproj", "{0294B2C3-07EF-45BD-843F-A3AD0FA8B8A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,10 @@ Global
 		{1292B265-A3F8-480A-B63E-BE7DA3F9C981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1292B265-A3F8-480A-B63E-BE7DA3F9C981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1292B265-A3F8-480A-B63E-BE7DA3F9C981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0294B2C3-07EF-45BD-843F-A3AD0FA8B8A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0294B2C3-07EF-45BD-843F-A3AD0FA8B8A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0294B2C3-07EF-45BD-843F-A3AD0FA8B8A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0294B2C3-07EF-45BD-843F-A3AD0FA8B8A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -153,6 +159,7 @@ Global
 		{CEBD131C-0B70-4BBF-99C5-47E2EB415554} = {CA3CC1A0-79B8-4B7B-8180-9A355B3856F7}
 		{6C032DF5-C957-468F-A4C9-CA8167508DEF} = {15E62D85-34D1-44EE-9C43-AD3CC8D8558D}
 		{1292B265-A3F8-480A-B63E-BE7DA3F9C981} = {3BF71760-5526-4089-8A43-ED8430847906}
+		{0294B2C3-07EF-45BD-843F-A3AD0FA8B8A0} = {15E62D85-34D1-44EE-9C43-AD3CC8D8558D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28315BFD-90E7-4E14-A2EA-F3D23AF4126F}

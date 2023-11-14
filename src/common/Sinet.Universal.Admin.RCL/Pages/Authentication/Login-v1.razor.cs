@@ -47,7 +47,7 @@ namespace Sinet.Universal.Admin.RCL.Pages.Authentication
             }
             catch (Exception ex)
             {
-                await PopupService.EnqueueSnackbarAsync($"登录失败: {ex.Message}", AlertTypes.Error);
+                await PopupService.EnqueueSnackbarAsync(ex);
             }
         }
     }
