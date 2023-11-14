@@ -18,16 +18,25 @@
                     </MListItemTitle>
                 </MListItemContent>
             </MListItem>
-            <MListItem Link Href="/pages/authentication/login-v2">
+            <MListItem  OnClick="LogOut">
                 <MListItemIcon Class="mr-4">
                     <MIcon Size=20 Color="neutral-lighten-4">fa:fas fa-sign-in-alt</MIcon>
                 </MListItemIcon>
                 <MListItemContent>
                     <MListItemTitle>
-                        <span class="neutral-lighten-4--text">Login v2</span>
+                        <span class="neutral-lighten-4--text">Log Out</span>
                     </MListItemTitle>
                 </MListItemContent>
             </MListItem>
         </MList>
     </ChildContent>
 </MMenu>
+
+ @code{
+    [Inject]
+    IAppService appService { get; set;}
+
+    async void LogOut(){
+        await appService.LogOut();
+    }
+}

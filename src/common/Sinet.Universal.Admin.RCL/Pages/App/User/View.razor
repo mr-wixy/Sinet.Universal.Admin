@@ -2,6 +2,7 @@
 @page "/app/user/view/{Id}"
 @using Sinet.Universal.Admin.RCL.Data.App.User
 @using Sinet.Universal.Admin.RCL.Data.App.User.Dto
+@using Volo.Abp.Account
 @inherits ProComponentBase
 
 <MRow>
@@ -235,6 +236,9 @@
     [Inject]
     private NavigationManager NavigationManager { get; set; } = null!;
 
+    [Inject]
+    private IProfileAppService ProfileAppService { get; set; }
+
     [CascadingParameter]
     private IPageTabsProvider? PageTabsProvider { get; set; }
 
@@ -247,18 +251,20 @@
         set { _userData = value; }
     }
 
-    protected override void OnInitialized()
+    protected override async void OnInitialized()
     {
         base.OnInitialized();
 
         _userData = UserService.GetList().FirstOrDefault(u => u.Id == Id);
 
-        if (CurrentUser != null && _userData != null)
+        var user = await ProfileAppService.GetAsync();
+
+        if (user != null && _userData != null)
         {
-            _userData.UserName = CurrentUser.Name;
-            _userData.Email = CurrentUser.Email;
-            _userData.Mobile = CurrentUser.PhoneNumber;
-            _userData.Role = CurrentUser.Roles.First();
+            _userData.FullName = user.Name;
+            _userData.UserName = user.Name;
+            _userData.Email = user.Email;
+            _userData.Mobile = user.PhoneNumber;
         }
 
         UpdateTabTitle();

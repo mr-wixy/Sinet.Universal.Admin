@@ -69,5 +69,13 @@ namespace Sinet.Universal.Admin
 
             return null;
         }
+
+
+        [HttpGet("app/logout")]
+        public async Task<IActionResult> SignOut(string redirect = null, CancellationToken cancellationToken = default)
+        {
+            await SignInManager.SignOutAsync();
+            return new RedirectResult(redirect ?? "/");
+        }
     }
 }

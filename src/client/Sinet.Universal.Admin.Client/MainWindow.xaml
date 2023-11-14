@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:rcl="clr-namespace:Sinet.Universal.Admin.RCL;assembly=Sinet.Universal.Admin.RCL"
         xmlns:blazor="clr-namespace:Microsoft.AspNetCore.Components.WebView.Wpf;assembly=Microsoft.AspNetCore.Components.WebView.Wpf"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="1400">
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="Sinet.Universal.Admin" Height="900" Width="1400">
     <Grid>
         <blazor:BlazorWebView HostPage="wwwroot\index.html" Services="{DynamicResource services}">
             <blazor:BlazorWebView.RootComponents>

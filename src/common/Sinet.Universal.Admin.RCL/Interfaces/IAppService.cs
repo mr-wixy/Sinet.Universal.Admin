@@ -10,8 +10,14 @@ namespace Sinet.Universal.Admin.RCL
 {
     public interface IAppService
     {
-        void ReAuthenticate(ICurrentUser user);
+        public string AccessToken { get; set; }
+
+        Task AuthenticateUserAsync(ICurrentUser user);
 
         void AuthenticateUser(IEnumerable<Claim> claims);
+
+        Task LoginToServer(string username, string password);
+
+        Task LogOut();
     }
 }

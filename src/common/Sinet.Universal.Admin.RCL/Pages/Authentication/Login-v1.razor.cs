@@ -12,9 +12,6 @@ namespace Sinet.Universal.Admin.RCL.Pages.Authentication
         public IAppService _appService { get; set; }
 
         [Inject]
-        public IIdentityUserAppService UserAppService { get; set; }
-
-        [Inject]
         public IPopupService PopupService { get; set; }
 
         public string? UserName { get; set; }
@@ -25,21 +22,11 @@ namespace Sinet.Universal.Admin.RCL.Pages.Authentication
         {
             try
             {
-                //var users = await UserAppService.GetListAsync(new GetIdentityUsersInput());
                 var res = await UserAccountAppService.LoginByPass(UserName, Password);
-
                 if(res == "Succeeded")
                 {
-                    var claims = new List<Claim>
-                    {
-                        new Claim(ClaimTypes.Sid, UserName),
-                        new Claim(ClaimTypes.Name, UserName )
-                    };
-                    //_appService.AuthenticateUser(claims);
+                    await _appService.LoginToServer(UserName, Password);
                     await PopupService.EnqueueSnackbarAsync("登录成功，正在跳转!", AlertTypes.Success);
-
-                    await Task.Delay(1000);
-                    Nav.NavigateTo($"/app/redirect_login?name={UserName}&pass={Password}", true);
                 }
                 else
                     await PopupService.EnqueueSnackbarAsync("登录失败！", AlertTypes.Error);

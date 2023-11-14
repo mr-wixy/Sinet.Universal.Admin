@@ -86,27 +86,20 @@
   },
   {
     "Id": 14,
-    "Title": "User",
+    "Title": "Account",
     "Icon": "mdi-account-outline",
     "Children": [
       {
         "Id": 15,
-        "Title": "List",
+        "Title": "User",
         "Icon": "mdi-circle",
         "Href": "app/user/list"
       },
       {
         "Id": 16,
-        "Title": "View",
+        "Title": "Role",
         "Icon": "mdi-circle",
-        "Href": "app/user/view",
-        "Target": "Self"
-      },
-      {
-        "Id": 17,
-        "Title": "Edit",
-        "Icon": "mdi-circle",
-        "Href": "app/user/edit",
+        "Href": "app/role/list",
         "Target": "Self"
       }
     ]

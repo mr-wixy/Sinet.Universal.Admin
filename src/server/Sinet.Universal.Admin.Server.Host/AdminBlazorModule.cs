@@ -43,6 +43,7 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
 using Sinet.Universal.Admin.RCL;
 using System.Reflection;
+using Sinet.Universal.Admin.Server.Host.Services;
 
 namespace Sinet.Universal.Admin;
 
@@ -105,6 +106,8 @@ public class AdminBlazorModule : AbpModule
 
         var basePath = Path.GetDirectoryName(Assembly.GetAssembly(typeof(AdminBlazorServerModule)).Location) ?? throw new Exception("Get the assembly root directory exception!");
         context.Services.AddNav(Path.Combine(basePath, $"wwwroot/nav/nav.json"));
+
+        context.Services.AddScoped<IAppService, ServerHostAppService>();
 
         ConfigureAuthentication(context);
         ConfigureUrls(configuration);

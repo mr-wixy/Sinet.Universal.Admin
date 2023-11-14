@@ -1,17 +1,25 @@
-﻿using Sinet.Universal.Admin.RCL.Pages.App.User;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using Volo.Abp.Users;
-using static Volo.Abp.Identity.IdentityPermissions;
 
 namespace Sinet.Universal.Admin.RCL.Services
 {
     public class BaseAppService : IAppService
     {
-        private readonly CustomAuthenticationStateProvider _authenticationStateProvider;
+        protected readonly NavigationManager _navigationManager;
 
-        public BaseAppService(CustomAuthenticationStateProvider authenticationStateProvider)
+        protected readonly CustomAuthenticationStateProvider _authenticationStateProvider;
+
+        public string AccessToken { get; set; }
+
+        public BaseAppService(CustomAuthenticationStateProvider authenticationStateProvider, NavigationManager navigationManager)
         {
             _authenticationStateProvider = authenticationStateProvider;
+            _navigationManager = navigationManager;
+        }
+
+        public virtual async Task LoginToServer(string username, string password)
+        {
+
         }
 
         public void AuthenticateUser(IEnumerable<Claim> claims)
@@ -19,7 +27,7 @@ namespace Sinet.Universal.Admin.RCL.Services
             _authenticationStateProvider.AuthenticateUser(claims);
         }
 
-        public void ReAuthenticate(ICurrentUser user)
+        public virtual Task AuthenticateUserAsync(ICurrentUser user)
         {
             if(user != null && user.IsAuthenticated)
             {
@@ -30,7 +38,14 @@ namespace Sinet.Universal.Admin.RCL.Services
                 };
                 AuthenticateUser(claims);
             }
+            return Task.CompletedTask;
             
+        }
+
+        public virtual Task LogOut()
+        {
+            _authenticationStateProvider.Logout();
+            return Task.CompletedTask;
         }
     }
 }
