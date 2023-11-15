@@ -30,7 +30,9 @@
     </CascadingAuthenticationState>
 </MErrorHandler>
 
-@code{
+@code {
+    [Inject]
+    private IJSRuntime _jsRuntime { get; set; }
 
     [Inject]
     IAppService appService { get; set; }
@@ -44,6 +46,15 @@
     {
         await appService.AuthenticateUserAsync(CurrentUser);
         base.OnInitialized();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await _jsRuntime.InvokeAsync<string>("app.loadingStop");
+        }
+        await base.OnAfterRenderAsync(firstRender);
     }
 
     private void OnHandle(Exception exception)
