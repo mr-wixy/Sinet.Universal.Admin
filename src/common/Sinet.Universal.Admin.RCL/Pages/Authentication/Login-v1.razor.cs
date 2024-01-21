@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Security.Claims;
 using Volo.Abp.Identity;
 
 namespace Sinet.Universal.Admin.RCL.Pages.Authentication
@@ -6,17 +7,20 @@ namespace Sinet.Universal.Admin.RCL.Pages.Authentication
     public partial class Login_v1
     {
         [Inject]
-        public IUserAccountAppService UserAccountAppService { get; set; }
+        [NotNull]
+        public IUserAccountAppService? UserAccountAppService { get; set; }
         
         [Inject]
-        public IAppService _appService { get; set; }
+        [NotNull]
+        public IAppService? _appService { get; set; }
 
         [Inject]
-        public IPopupService PopupService { get; set; }
+        [NotNull]
+        public IPopupService? PopupService { get; set; }
 
-        public string? UserName { get; set; }
+        public string UserName { get; set; } = "admin";
 
-        public string? Password { get; set; }
+        public string Password { get; set; } = "1q2w3E*";
 
         public async Task LoginTo()
         {

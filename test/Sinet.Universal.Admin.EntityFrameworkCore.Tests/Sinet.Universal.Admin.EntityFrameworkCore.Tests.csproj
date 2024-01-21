@@ -11,11 +11,11 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\server\Sinet.Universal.Admin.EntityFrameworkCore\Sinet.Universal.Admin.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\Sinet.Universal.Admin.TestBase\Sinet.Universal.Admin.TestBase.csproj" />
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="8.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
   </ItemGroup>
 
 </Project>

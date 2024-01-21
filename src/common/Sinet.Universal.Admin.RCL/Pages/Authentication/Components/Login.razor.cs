@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Identity;
+﻿using System.Diagnostics.CodeAnalysis;
+using Volo.Abp.Identity;
 using Volo.Abp.Identity.Integration;
 using Volo.Abp.Users;
 
@@ -42,7 +43,8 @@ public partial class Login
     public EventCallback<MouseEventArgs> OnLogin { get; set; }
 
     [Inject]
-    public IServerInfoAppService ServerInfoAppService { get; set; }
+    [NotNull]
+    public IServerInfoAppService? ServerInfoAppService { get; set; }
 
 
     protected override async Task OnInitializedAsync()

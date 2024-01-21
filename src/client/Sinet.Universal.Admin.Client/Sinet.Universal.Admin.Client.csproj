@@ -9,13 +9,13 @@
     </PropertyGroup>
 
      <ItemGroup>
-       <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="8.0.01" />
-       <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
-       <PackageReference Include="Serilog.Extensions.Hosting" Version="7.0.0" />
-       <PackageReference Include="Serilog.Extensions.Logging" Version="7.0.0" />
+       <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="8.0.6" />
+       <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+       <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+       <PackageReference Include="Serilog.Extensions.Logging" Version="8.0.0" />
        <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
        <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
-       <PackageReference Include="Volo.Abp.Autofac" Version="8.0.0" />
+       <PackageReference Include="Volo.Abp.Autofac" Version="8.0.2" />
      </ItemGroup>
 
      <ItemGroup>
