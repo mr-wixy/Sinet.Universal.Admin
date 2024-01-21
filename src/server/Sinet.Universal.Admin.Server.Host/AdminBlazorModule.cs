@@ -23,21 +23,15 @@ using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Bundling;
 using Volo.Abp.AspNetCore.Components.Web.Theming.Routing;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.Localization;
-using Volo.Abp.AspNetCore.Mvc.UI;
-using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap;
 using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
-using Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Identity.Blazor.Server;
-using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.SettingManagement.Blazor.Server;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.TenantManagement.Blazor.Server;
-using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
@@ -95,14 +89,7 @@ public class AdminBlazorModule : AbpModule
         var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
 
-        context.Services.AddMasaBlazor(builder =>
-        {
-            builder.ConfigureTheme(theme =>
-            {
-                theme.Themes.Light.Primary = "#4318FF";
-                theme.Themes.Light.Accent = "#4318FF";
-            });
-        }).AddI18nForServer("wwwroot/i18n");
+        context.Services.AddMasaBlazor().AddI18nForServer("wwwroot/i18n");
 
         var basePath = Path.GetDirectoryName(Assembly.GetAssembly(typeof(AdminBlazorServerModule)).Location) ?? throw new Exception("Get the assembly root directory exception!");
         context.Services.AddNav(Path.Combine(basePath, $"wwwroot/nav/nav.json"));
